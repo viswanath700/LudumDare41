@@ -33,7 +33,7 @@ public class FollowPath : MonoBehaviour
     private void FixedUpdate()
     {
         FollowPathPoints();
-        transform.rotation = Quaternion.identity;
+        //transform.rotation = Quaternion.identity;
     }
 
     private void FollowPathPoints()
@@ -41,6 +41,8 @@ public class FollowPath : MonoBehaviour
         if (_isfollowingPath)
         {
             transform.position = Vector3.Lerp(transform.position, _targetPosition, _speed * Time.deltaTime);
+            SetRotation();
+
             var distance = Vector3.SqrMagnitude(transform.position - _path.Points[_currentIndex].position);
 
             if (distance < _targetReach)
@@ -50,5 +52,16 @@ public class FollowPath : MonoBehaviour
                 _targetPosition = _path.Points[_currentIndex].position;
             }
         }
+    }
+
+    private void SetRotation()
+    {
+        var direction = _targetPosition - transform.position;
+        direction.y = 0;
+        var rotation = transform.localEulerAngles;
+        rotation.x = 0;
+        rotation.y = 90 - Vector3.Angle(direction, Vector3.right);
+        rotation.z = 0;
+        transform.localEulerAngles = rotation;
     }
 }
