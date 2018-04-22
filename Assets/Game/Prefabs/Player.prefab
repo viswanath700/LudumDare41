@@ -130,6 +130,8 @@ MonoBehaviour:
   _modelPosition: {x: 0, y: 0.332, z: 0}
   _meshRenderer: {fileID: 23490880527512478}
   _rigidbody: {fileID: 54178127208695718}
+  _friendPosition: {x: 4, y: 0, z: -4}
+  _enemyPosition: {x: -4, y: 0, z: 4}
 --- !u!114 &114729819412345996
 MonoBehaviour:
   m_ObjectHideFlags: 1
