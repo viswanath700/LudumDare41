@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { private set; get; }
 
     private Player _player;
+    private Player _enemyPlayer;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         StartCoroutine(RandomlyPickPlayer());
+        StartCoroutine(RandomlySpawnEnemies());
     }
 
     private IEnumerator RandomlyPickPlayer()
@@ -38,6 +40,39 @@ public class GameManager : MonoBehaviour
     {
         _player.SetPath(path);
         StartCoroutine(RandomlyPickPlayer());
+    }
+
+    private IEnumerator RandomlySpawnEnemies()
+    {
+        yield return new WaitForSeconds(_spawnRate);
+
+        while (true)
+        {
+            _enemyPlayer = Instantiate(_playerPrefab, transform);
+            var randomIndex = Random.Range(0, _enemyPlayers.Count);
+            _enemyPlayer.InitializePlayer(_enemyPlayers[randomIndex]);
+            _enemyPlayer.SetPath(GetRandomPath());
+
+            yield return new WaitForSeconds(_spawnRate);
+        }
+    }
+
+    private Path GetRandomPath()
+    {
+        var randomIndex = Random.Range(0, 3);
+        var laneType = LaneType.TopLane;
+
+        switch (randomIndex)
+        {
+            case 1:
+                laneType = LaneType.MiddleLane;
+                break;
+            case 2:
+                laneType = LaneType.BottomLane;
+                break;
+        }
+
+        return PathManager.Instance.GetPath(laneType);
     }
 }
 
