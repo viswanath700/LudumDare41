@@ -14,9 +14,10 @@ public class DroneBlocker : MonoBehaviour
     private void LoadBlockers()
     {
         _blockers.Clear();
-        foreach (Blocker blocker in transform)
+        foreach (Transform blocker in transform)
         {
-            _blockers.Add(blocker);
+            if(blocker.GetComponent<Blocker>() != null)
+                _blockers.Add(blocker.GetComponent<Blocker>());
         }
     }
 
