@@ -5,9 +5,9 @@ using UnityEngine;
 public class Blocker : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _sprite;
-    [SerializeField] private float _minAlpha;
-    [SerializeField] private float _maxAlpha;
-    [SerializeField] private float _pulseDuration;
+    [SerializeField] private DroneBlocker _droneBlocker;
+
+    private Coroutine _disablerCoroutine;
 
     private bool _isBlocking;
     public bool IsBlocking
@@ -17,12 +17,33 @@ public class Blocker : MonoBehaviour
         {
             _isBlocking = value;
             SetSpriteState();
+            if (_isBlocking)
+            {
+                if (_disablerCoroutine != null) StopCoroutine(_disablerCoroutine);
+                _disablerCoroutine = StartCoroutine(WaitAndDisable());
+            }
         }
     }
 
-    private void Awake()
+    public void Initialize()
     {
         IsBlocking = false;
+    }
+
+    private IEnumerator WaitAndDisable()
+    {
+        yield return new WaitForSeconds(_droneBlocker.DisableWaitDec);
+        IsBlocking = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (IsBlocking)
+        {
+            var drone = other.GetComponent<Drone>();
+            if (drone != null) drone.DoDamage();
+            IsBlocking = false;
+        }
     }
 
     private void OnMouseEnter()
@@ -53,8 +74,8 @@ public class Blocker : MonoBehaviour
     {
         iTween.Stop(gameObject);
         iTween.ValueTo(gameObject, iTween.Hash(
-            "from", _maxAlpha, "to", _minAlpha,
-            "time", _pulseDuration, "easetype", "linear",
+            "from", _droneBlocker.MaxAlpha, "to", _droneBlocker.MinAlpha,
+            "time", _droneBlocker.PulseDuration, "easetype", "linear",
             "onupdate", "SetSpriteAlpha", "oncomplete", "FadeIn"));
     }
 
@@ -62,8 +83,8 @@ public class Blocker : MonoBehaviour
     {
         iTween.Stop(gameObject);
         iTween.ValueTo(gameObject, iTween.Hash(
-            "from", _minAlpha, "to", _maxAlpha,
-            "time", _pulseDuration, "easetype", "linear",
+            "from", _droneBlocker.MinAlpha, "to", _droneBlocker.MaxAlpha,
+            "time", _droneBlocker.PulseDuration, "easetype", "linear",
             "onupdate", "SetSpriteAlpha", "oncomplete", "FadeOut"));
     }
 

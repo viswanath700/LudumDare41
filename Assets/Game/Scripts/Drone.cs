@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Drone : MonoBehaviour
 {
+    [SerializeField] private int _life;
     [SerializeField] private float _speed;
     [SerializeField] private ParticleSystem m_Particles;
 
@@ -15,6 +16,18 @@ public class Drone : MonoBehaviour
     private void MoveDrone()
     {
         transform.position += Vector3.down * _speed * Time.deltaTime;
+    }
+
+    public void DoDamage()
+    {
+        _life--;
+        SetLifeState();
+        if (_life <= 0) DestroyDrone();
+    }
+
+    private void SetLifeState()
+    {
+
     }
 
     public void DestroyDrone()
