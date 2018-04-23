@@ -25,7 +25,6 @@ public class DroneSpawner : MonoBehaviour
             var randomSpawnIndex = Random.Range(0, _spawnPoints.Count);
             var drone = Instantiate(_dronePrefab, _spawnPoints[randomSpawnIndex]);
             drone.transform.localPosition = Vector3.zero;
-            drone.transform.localScale = Vector3.one;
 
             yield return new WaitForSeconds(1 / _spawnRatePerSec);
         }
