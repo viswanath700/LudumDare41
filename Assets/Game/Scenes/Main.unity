@@ -370,6 +370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 131087136}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &140437382
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -649,6 +653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 332514091}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &427568081
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +768,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 427568084}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &435354639
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 435354642}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &454143058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1049,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 563331433}
+  - component: {fileID: 563331434}
   m_Layer: 0
   m_Name: DroneBlocker
   m_TagString: Untagged
@@ -1065,6 +1082,17 @@ Transform:
   m_Father: {fileID: 1705059896}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563331434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 563331432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1d3f4f11765b98469850a87860ea07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &598152131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 705395110}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &729898640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 772775274}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1269147445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,6 +1628,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1269147448}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1290923992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,6 +1743,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1290923995}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1369746925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1858,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1369746928}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1441163813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1441163816}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1605902674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2088,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1605902677}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1705059894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,6 +2255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 1833117780}
+  _minAlpha: 0.2
+  _maxAlpha: 0.3
+  _pulseDuration: 0.5
 --- !u!1 &1874078549
 GameObject:
   m_ObjectHideFlags: 0
