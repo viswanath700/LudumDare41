@@ -676,7 +676,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -748,9 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 210525205}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &377170284
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +789,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -863,9 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 377170287}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &454143058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,7 +4548,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4624,9 +4620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 550952858}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &558945189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,6 +4746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d3f4f11765b98469850a87860ea07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minAlpha: 0.3
+  _maxAlpha: 0.6
+  _pulseDuration: 0.5
+  _disableWaitDec: 2
 --- !u!1001 &579478783
 Prefab:
   m_ObjectHideFlags: 0
@@ -4985,8 +4983,6 @@ GameObject:
   - component: {fileID: 729898645}
   - component: {fileID: 729898643}
   - component: {fileID: 729898642}
-  - component: {fileID: 729898644}
-  - component: {fileID: 729898646}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -5076,26 +5072,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!50 &729898644
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 729898640}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &729898645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5107,21 +5083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a450952c840ded941a458b5984b13e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &729898646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 729898640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 764890ec08c7b9844acb7faa7151a4d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sprite: {fileID: 114956767}
-  _minAlpha: 0.05
-  _maxAlpha: 0.3
-  _pulseDuration: 2
 --- !u!1 &732309878
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,7 +5123,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5234,9 +5195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 732309881}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &795431325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,7 +5236,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -5349,9 +5308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 795431328}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &843865177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8873,7 +8830,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -8945,9 +8902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 918527208}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &922175654
 GameObject:
   m_ObjectHideFlags: 0
@@ -12437,7 +12392,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12509,9 +12464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 941100854}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &992065371
 GameObject:
   m_ObjectHideFlags: 0
@@ -12552,7 +12505,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12624,9 +12577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 992065374}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &1035314261
 GameObject:
   m_ObjectHideFlags: 0
@@ -12667,7 +12618,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12739,9 +12690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1035314264}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &1125959929
 GameObject:
   m_ObjectHideFlags: 0
@@ -19680,7 +19629,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19752,9 +19701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1273833426}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &1311145110
 GameObject:
   m_ObjectHideFlags: 0
@@ -19795,7 +19742,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19867,9 +19814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1311145113}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &1411399051
 GameObject:
   m_ObjectHideFlags: 0
@@ -23505,7 +23450,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -23577,9 +23522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 1899191409}
-  _minAlpha: 0.3
-  _maxAlpha: 0.6
-  _pulseDuration: 0.5
+  _droneBlocker: {fileID: 563331434}
 --- !u!1 &1907296629
 GameObject:
   m_ObjectHideFlags: 0
